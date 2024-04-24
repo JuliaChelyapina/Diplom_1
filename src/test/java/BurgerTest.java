@@ -27,16 +27,8 @@ public class BurgerTest {
     private Ingredient ingredient3;
     @Spy
     private Burger burger;
-
-    public static final String RECEIPT = "(==== Карамельная ====)"
-            + System.lineSeparator()
-            + "= sauce кетчуп ="
-            + System.lineSeparator()
-            + "(==== Карамельная ====)"
-            + System.lineSeparator()
-            + System.lineSeparator()
-            + "Price: 11.100000"
-            + System.lineSeparator();
+    public static final String RECEIPT = String.format("%s%n= sauce кетчуп =%n%s%n%nPrice: %.6f%n",
+            "(==== Карамельная ====)", "(==== Карамельная ====)", 11.1);
     @Test
     public void burgerRemoveIngredientTest() {
         when(ingredient.getPrice()).thenReturn(1f);
